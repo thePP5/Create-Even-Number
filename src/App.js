@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import React,{useState} from 'react';
+
+const CreateEvenNumber=()=> {
+  const[count,setCount] = useState(2)
+  const incrementByEven=()=>{
+    setCount(count*2);
+  }
+
+  const resetAll =()=>{
+    setCount(2)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    {count}
+    <button onClick={incrementByEven}>Click Me!</button>
+    <button onClick={resetAll}>Reset</button>
     </div>
   );
 }
 
-export default App;
+export default CreateEvenNumber;
